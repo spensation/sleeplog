@@ -1,5 +1,4 @@
 <h1> Naps </h1>
 <% @days.each do |day| %>
-	<h3><%= link_to day.name, day_path(day) %></h3>
-	<h4><%= day.date %></h4>
+	<h3><%= link_to day.date, day_path(day) %></h3>
 <% end %>

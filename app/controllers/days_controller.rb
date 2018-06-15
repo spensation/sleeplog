@@ -6,13 +6,12 @@ class DaysController < ApplicationController
 
 	def new
 		@day = Day.new
+		@day.rests.build
 	end
 
 	def create
-		@day = Day.new(day_params)
-		if @day.save
-			redirect_to day_path(@day)
-		end
+		@day = Day.create(day_params)
+		redirect_to day_path(@day)
 	end
 
 	def show
@@ -23,6 +22,6 @@ class DaysController < ApplicationController
 	private
 
 		def day_params
-			params.require(:day).permit(:name, :date)
+			params.require(:day).permit(:date, rests_attributes: [:id, :name, :duration])
 		end
 end

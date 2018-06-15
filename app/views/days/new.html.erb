@@ -1,0 +1,31 @@
+<%= form_for @day do |f| %>
+  <div>
+  	<%= f.label :date %>
+  	<%= f.date_field :date %>
+  </div>
+  <br>
+  <div>
+  	<%= f.fields_for :rests do |rest| %>
+  	<div>
+  		<%= rest.label :name %>
+
+  		<%= rest.select(:name, options_for_select(['',
+  													'Nap_1',
+  													'Nap_2',
+  													'Nap_3'])) %>
+  	</div>
+  	<br>
+  	<div>
+  		<%= rest.label :duration %>
+     	<%= rest.select(:duration, options_for_select(1..120)) %>
+
+  	<% end %>
+  	</div>
+  		
+  </div>
+  <br>
+  <div>
+  	<%= f.submit "Create Nap"%>
+  </div>
+  
+<% end %>
