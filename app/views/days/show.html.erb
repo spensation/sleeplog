@@ -1,0 +1,5 @@
+<h1><%= @day.name %></h1>
+<% @day.rests.each do |rest| %>
+	<h3><%= rest.name %></h3>
+	<h3><%= rest.duration %> min</h3>
+<% end %>
