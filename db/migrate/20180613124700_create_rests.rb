@@ -3,6 +3,7 @@ class CreateRests < ActiveRecord::Migration[5.1]
     create_table :rests do |t|
       t.string :name
       t.integer :duration
+      t.belongs_to :day
 
       t.timestamps
     end
