@@ -8,19 +8,19 @@ class RestsController < ApplicationController
 		@rest = Rest.new
 	end
 
-	def create
+	def create	
 		@rest = Rest.create(rest_params)		
 	end
 
 
 	def show
-		@rest = Rest.find(params[:id])
-		@note = @rest.notes.build	
+		@rest = Rest.find(params[:id])	
 	end
 
 
 	private
 		def rest_params
+			raise params.inspect
 			params.require(:rest).include(:id, :name, :duration, :day_id)
 		end
 end

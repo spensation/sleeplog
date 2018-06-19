@@ -1,9 +1,10 @@
 <h3><%= @rest.name %></h3> 
 <h3><%= @rest.duration %> min</h3>
-	
-<p><%= @rest.notes.content %> </p>
-<%= form_for ([@rest, @note]) do |f| %>
-	<%= f.label :content %>
-	<%= f.text_area :content %>
-	<%= f.submit %>
+
+<% if @rest.notes %>
+	<% @rest.notes.each do |note| %>
+		<p><%= note.content %></p>
+	<% end %>
+
 <% end %>
+<button class="navLink"><%= link_to "Add Note", new_rest_note_path(@rest)%></button>
