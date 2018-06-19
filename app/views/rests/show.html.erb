@@ -1,0 +1,9 @@
+<h3><%= @rest.name %></h3> 
+<h3><%= @rest.duration %> min</h3>
+	
+<p><%= @rest.notes.content %> </p>
+<%= form_for ([@rest, @note]) do |f| %>
+	<%= f.label :content %>
+	<%= f.text_area :content %>
+	<%= f.submit %>
+<% end %>

@@ -1,0 +1,5 @@
+<%= form_for Note.new url: rest_notes_path(@rest) do |f| %>
+	<%= f.label :content %>
+	<%= f.text_field :content %>
+	<%= f.submit %>
+<% end %>
