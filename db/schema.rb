@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180618160936) do
+ActiveRecord::Schema.define(version: 20180619221555) do
 
   create_table "days", force: :cascade do |t|
     t.string "name"
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 20180618160936) do
     t.integer "day_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.time "starttime"
+    t.time "endtime"
     t.index ["day_id"], name: "index_rests_on_day_id"
   end
 

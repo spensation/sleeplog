@@ -1,6 +1,7 @@
 <%= form_for ([@day, @rest]) do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
+  <%= f.time :starttime %>
   <%= f.label :duration %>
   <%= f.text_field :duration %>
   <%= f.submit %>

@@ -1,5 +1,7 @@
+<h2>A note about <%= @rest.name %>:</h2>
+
 <%=form_for [@rest, @note] do |f| %>
-	<%= f.label :content %>
-	<%= f.text_area :content %>
+	<%= f.text_area :content, placeholder: "add a note"%>
+	<br>
 	<%= f.submit %>
 <% end %>

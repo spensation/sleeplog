@@ -1,5 +1,6 @@
 <h1><%= @day.name %></h1>
 <% @day.rests.each do |rest| %>
-	<h3><%= link_to rest.name, rest_path(rest) %></h3>
-	<h3><%= rest.duration %> min</h3>
+	<h3><%= link_to rest.name, day_rests_path(@day) %></h3>
+	<%= %>
+	<h3><%=TimeDifference.between(rest.starttime, rest.endtime).in_minutes  %> min</h3>
 <% end %>

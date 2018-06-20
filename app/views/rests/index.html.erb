@@ -1,4 +1,4 @@
-<h1>Last Seven Days</h1>
+<h1><%=@day.date%> Naps</h1>
 <% @rests.each do |rest| %>
 	<h3><%= link_to rest.name, rest_path(rest) %></h3> 
 	<h3><%= rest.duration %> min</h3>

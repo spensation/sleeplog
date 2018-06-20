@@ -1,10 +1,12 @@
 class RestsController < ApplicationController
 	# naps in past seven days
 	def index
-		@rests = Rest.created_since(7.days.ago)
+		@day = Day.find(params[:day_id])
+		@rests = @day.rests
 	end
 
 	def new
+		@day = Day.find(params[:day_id])
 		@rest = Rest.new
 	end
 
@@ -20,7 +22,6 @@ class RestsController < ApplicationController
 
 	private
 		def rest_params
-			raise params.inspect
-			params.require(:rest).include(:id, :name, :duration, :day_id)
+			params.require(:rest).include(:id, :name, :duration, :starttime, :endtime, :day_id)
 		end
 end

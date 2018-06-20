@@ -7,7 +7,7 @@
   <div>
   	<%= f.fields_for :rests do |rest| %>
   	<div>
-  		<%= rest.label :name %>
+  		<%= rest.label :nap %>
 
   		<%= rest.select(:name, options_for_select(['',
   													'Nap_1',
@@ -16,6 +16,20 @@
   	</div>
   	<br>
   	<div>
+      <%= rest.label :start %>
+      <%= rest.time_select :starttime %>
+    </div>
+
+    <br>
+
+    <div>
+      <%= rest.label :end %>
+      <%= rest.time_select :endtime %>
+    </div>
+    
+    <br>  
+
+    <div>
   		<%= rest.label :duration %>
      	<%= rest.select(:duration, options_for_select(1..120)) %>
 
@@ -25,7 +39,7 @@
   </div>
   <br>
   <div>
-  	<%= f.submit "Create Nap"%>
+  	<%= f.submit "Create"%>
   </div>
   
 <% end %>

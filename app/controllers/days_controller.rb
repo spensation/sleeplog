@@ -22,6 +22,6 @@ class DaysController < ApplicationController
 	private
 
 		def day_params
-			params.require(:day).permit(:id, :date, rests_attributes: [:id, :name, :duration])
+			params.require(:day).permit(:id, :date, rests_attributes: [:id, :name, :duration, :starttime, :endtime])
 		end
 end
